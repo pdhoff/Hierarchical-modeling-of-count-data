@@ -17,7 +17,7 @@ the (log) death counts and case counts in the previous four weeks: \[
        \beta_{j,8} \log y^c_{j,t-4} .
 \] A similar model is fit for the case data.
 
-Load in some data that has alreay been setup for AR model fitting:
+Load in some data that has already been setup for AR model fitting:
 
 ``` r
 lag<-4

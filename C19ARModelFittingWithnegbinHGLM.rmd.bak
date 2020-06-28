@@ -18,7 +18,7 @@ This is done using essentially a bivariate fourth-order autoregressive generaliz
 A similar model is fit for the case data. 
 
 
-Load in some data that has already been setup for AR model fitting:
+Load in some data that has alreay been setup for AR model fitting:
 ```{r}
 lag<-4
 load(paste0("C19AR",lag,".rdata")) 

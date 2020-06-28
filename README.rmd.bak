@@ -18,7 +18,7 @@ this code includes fitting an
 C19 counts.
 
 ### Why hierarchical modeling? 
-It is often the case that the data patterns in one group are similar to, but not exactly equal to, the data patterns of other groups. Because of the potential differences, one data analysis approach is to fit a separate statistical model to the data from each group. However, if the amount of data from each group is small, the group-specific parameter estimates, inferences and forecasts will be very noisy. The effects of noise can be reduced by leveraging the potential similarities among the groups. This is what hierarchical modeling does - it provides group-specific estimates and inferences that make use of potential across-group similarities. 
+It is often the case that the data patterns in one group are similar to, but not exactly equal to, the data patterns of other groups. Because of the potential differences, one data analysis approach is to fit a separate statistical model to the data from each group. However, if the amount of data from each group is small, the group-specific parameter estimates, inferences and forecasts will be very noisy. The effects of noise can be reduced by leveraging the potential similatities among the groups. This is what hierarchical modeling does - it provides group-specific estimates and inferences that make use of potential across-group similarities. 
 
 
 ### A hierarchical negative binomial regression model

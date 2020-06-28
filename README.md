@@ -23,7 +23,7 @@ the potential differences, one data analysis approach is to fit a
 separate statistical model to the data from each group. However, if the
 amount of data from each group is small, the group-specific parameter
 estimates, inferences and forecasts will be very noisy. The effects of
-noise can be reduced by leveraging the potential similatities among the
+noise can be reduced by leveraging the potential similarities among the
 groups. This is what hierarchical modeling does - it provides
 group-specific estimates and inferences that make use of potential
 across-group similarities.
