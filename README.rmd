@@ -2,6 +2,7 @@
 title: "Hierarchical negative binomial regression "
 author: "Peter Hoff"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: github_document
 ---
 
 ### Summary
