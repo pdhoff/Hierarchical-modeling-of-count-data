@@ -3,6 +3,12 @@ State-level C19 analyses
 Peter Hoff
 June 17, 2020
 
+
+<script type="text/javascript" async
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js? 
+config=TeX-MML-AM_CHTML"
+</script>
+
 ### Summary
 
 This document illustrates the use of a hierarchical negative binomial
