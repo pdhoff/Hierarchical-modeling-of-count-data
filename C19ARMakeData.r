@@ -1,30 +1,19 @@
-## -- weekly county-level data on numbers of reported cases
-#Ccases<-readRDS(url("https://github.com/pdhoff/US-counties-C19-data/blob/master/UScountiesC19Cases.rds?raw=true"))
-Ccases<-readRDS("~/Dropbox/GHDBlog/COVID19-Data/UScountiesC19Cases.rds")
+## -- functions for downloading and wrangling data 
+source("https://raw.githubusercontent.com/pdhoff/US-counties-C19-data/master/USC19data.r") 
 
 
-## -- weekly county-level data on number of reported deaths
-#Cdeaths<-readRDS(url("https://github.com/pdhoff/US-counties-C19-data/blob/master/UScountiesC19Deaths.rds?raw=true")) 
-Cdeaths<-readRDS("~/Dropbox/GHDBlog/COVID19-Data/UScountiesC19Deaths.rds")
-
-
-## -- convert to state level data
-stateFIPS<-substring(rownames(Ccases),1,2)
-
-Scases<-Sdeaths<-NULL
-for(st in sort(unique(stateFIPS))){
-
-  Scases<-rbind(Scases, apply(Ccases[ stateFIPS==st,,drop=FALSE],2,sum ) )
-  Sdeaths<-rbind(Sdeaths, apply(Cdeaths[ stateFIPS==st,,drop=FALSE],2,sum ) )  
-}
-rownames(Scases)<-rownames(Sdeaths)<-sort(unique(stateFIPS)) 
-colnames(Scases)<-colnames(Sdeaths)<-colnames(Ccases)
+## -- download and convert data to weekly state-level counts 
+X<-stateify( weekify( pullC19data() ) )
+Sdeaths<-X[,,1] 
+Scases<-X[,,2]
 
 
 ## -- state populations 
 USCdata<-readRDS(url("https://github.com/pdhoff/US-counties-data/blob/master/UScounties.rds?raw=true"))
 Spops<-tapply(USCdata$population, USCdata$stateFips,sum)
-all(names(Spops) == rownames(Scases))
+
+## -- check 
+all( fips2state(names(Spops))  == rownames(Scases))
 
 
 ## --  design matrix for an AR fit: 
