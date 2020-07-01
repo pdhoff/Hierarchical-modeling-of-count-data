@@ -143,7 +143,7 @@ W[[1]]
 The \(W_i\) matrix relates the first regression coefficient
 \(\beta_{j,1}\) to the (log) population of state \(j\).
 
-Now load functions for hierarchical negative binomial model fitting.
+Now load functions for hierarchical negative binomial model fitting:
 
 ``` r
 source("negbinHGLM.r") 
@@ -160,10 +160,11 @@ fitCases<-negbinHGLM(yc,X,W)
 save(fitDeaths,fitCases,file=paste0("C19AR",lag,"ModelFits.rdata"))
 ```
 
-Now we will examine the fit. For both deaths and cases, we obtain
-posterior mean estimates of \(\lambda_j \exp( \beta_{j}^\top x_{j,t} )\)
-for each state \(j\) and each week \(t\), by averaging this quantity
-over the parameter values simulated from the Markov chain.
+Now we will examine the fit. For both deaths and cases, we obtain fitted
+values, specifically, posterior mean estimates of
+\(\lambda_j \exp( \beta_{j}^\top x_{j,t} )\) for each state \(j\) and
+each week \(t\), by averaging this quantity over the parameter values
+simulated from the Markov chain.
 
 ``` r
 ## -- fitted values for deaths
@@ -189,7 +190,7 @@ for(i in 1:length(yc)){
 }
 ```
 
-Now plot the observed and fitted for each state.
+Now plot the observed and fitted values for each state.
 
   - observed deaths: thin red lines
   - fitted deaths: thick pink lines
